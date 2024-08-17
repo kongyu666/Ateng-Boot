@@ -228,45 +228,56 @@
     <build>
         <finalName>${project.name}-${project.version}</finalName>
         <plugins>
-            <!-- Maven 编译插件 -->
+            <!-- Maven 编译插件，用于指定编译的Java版本及编码 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
+                    <!-- 指定源码版本 -->
                     <source>${java.version}</source>
+                    <!-- 指定目标版本 -->
                     <target>${java.version}</target>
+                    <!-- 编码格式 -->
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                    </compilerArgs>
+                    <!-- 注解处理器配置 -->
                     <annotationProcessorPaths>
+                        <!-- Lombok 注解处理器 -->
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
                             <version>${lombok.version}</version>
                         </path>
+                        <!-- Spring Boot 配置处理器 -->
                         <path>
                             <groupId>org.springframework.boot</groupId>
                             <artifactId>spring-boot-configuration-processor</artifactId>
                             <version>${spring-boot.version}</version>
                         </path>
+                        <!-- MapStruct Plus 注解处理器 -->
                         <path>
                             <groupId>io.github.linpeilie</groupId>
                             <artifactId>mapstruct-plus-processor</artifactId>
                             <version>${mapstruct-plus.version}</version>
                         </path>
+                        <!-- MapStruct Plus Lombok 绑定 -->
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok-mapstruct-binding</artifactId>
                             <version>${mapstruct-plus.lombok.version}</version>
                         </path>
+                        <!-- MyBatis-Flex 注解处理器 -->
                         <path>
                             <groupId>com.mybatis-flex</groupId>
                             <artifactId>mybatis-flex-processor</artifactId>
                             <version>${mybatis-flex.version}</version>
                         </path>
                     </annotationProcessorPaths>
+                    <!-- 编译参数 -->
+                    <compilerArgs>
+                        <!-- 启用Java 8参数名称保留功能 -->
+                        <arg>-parameters</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
         </plugins>

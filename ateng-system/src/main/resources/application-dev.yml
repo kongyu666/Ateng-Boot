@@ -67,3 +67,45 @@ spring:
       max-active: 1000  # 最大活跃连接数
       max-wait: 10000  # 获取连接的最大等待时间，单位毫秒
 ---
+############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
+sa-token:
+  # token 名称（同时也是 cookie 名称）
+  token-name: token
+  # token 有效期（单位：秒） 默认30天，-1 代表永久有效
+  timeout: 2592000
+  # token 最低活跃频率（单位：秒），如果 token 超过此时间没有访问系统就会被冻结，默认-1 代表不限制，永不冻结
+  active-timeout: -1
+  # 是否允许同一账号多地同时登录 （为 true 时允许一起登录, 为 false 时新登录挤掉旧登录）
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个 token （为 true 时所有登录共用一个 token, 为 false 时每次登录新建一个 token）
+  is-share: true
+  # token 风格（默认可取值：uuid、simple-uuid、random-32、random-64、random-128、tik）
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: false
+---
+# Actuator 监控端点的配置项
+management:
+  endpoints: # 配置Actuator端点的管理
+    web:
+      exposure: # 暴露端点
+        include: 'health,shutdown'  # 包含所有端点，可以根据需要更改为具体的端点列表
+        #include: '*'  # 包含所有端点，可以根据需要更改为具体的端点列表
+  endpoint: # 配置各个端点的行为
+    shutdown: # 关闭端点配置
+      enabled: true # 启用shutdown端点，允许通过POST请求关闭应用程序
+    health: # 健康检查端点配置
+      #show-details: always # 显示完整的健康信息，包括详细的检查项
+      show-details: never # 显示简短的健康信息
+---
+# 监控配置
+spring.boot.admin.client:
+  # 增加客户端开关
+  enabled: false
+  # 设置 Spring Boot Admin Server 地址
+  url: http://dev.monitor-admin3.lingo.local/admin
+  instance:
+    service-host-type: IP
+  username: admin
+  password: Admin@123
+---
