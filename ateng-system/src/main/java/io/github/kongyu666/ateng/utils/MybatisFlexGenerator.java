@@ -1,4 +1,4 @@
-package io.github.kongyu666.common.mybatisflex.config;
+package io.github.kongyu666.ateng.utils;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.mybatisflex.codegen.Generator;
@@ -23,10 +23,10 @@ import java.util.List;
  */
 public class MybatisFlexGenerator {
     // 生成的包路径
-    private static final String BasePackage = "io.github.kongyu666.example.ateng";
+    private static final String BasePackage = "io.github.kongyu666.ateng.system";
     // 需要生成的表
     private static final List<String> GenerateTable = Arrays.asList(
-            "sys_user"
+            "sys_log_operate"
     );
     // 不需要生成的表（排除）
     private static final List<String> UnGenerateTable = Arrays.asList(
@@ -37,7 +37,7 @@ public class MybatisFlexGenerator {
     public static void main(String[] args) {
         //配置数据源
         DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setUrl("jdbc:postgresql://192.168.1.10:32297/lx_ateng?currentSchema=public");
+        dataSource.setUrl("jdbc:postgresql://192.168.1.10:32297/ateng_boot?currentSchema=public");
         dataSource.setUsername("postgres");
         dataSource.setPassword("Lingo@local_postgresql_5432");
 
