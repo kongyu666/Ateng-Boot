@@ -28,6 +28,7 @@
 !*.xml
 !*.config
 !*.imports
+!*.iml
 !*.sql
 !banner.txt
 

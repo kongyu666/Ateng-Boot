@@ -5,7 +5,7 @@ server:
     context-path: /
 spring:
   application:
-    name: ateng-system
+    name: ${project.artifactId}
   profiles:
     active: @profiles.active@
     desc: @profiles.desc@
