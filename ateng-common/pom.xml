@@ -38,6 +38,7 @@
         <module>ateng-common-sms4j</module>
         <module>ateng-common-mail</module>
         <module>ateng-common-jetcache</module>
+        <module>ateng-common-kafka</module>
     </modules>
 
 </project>
