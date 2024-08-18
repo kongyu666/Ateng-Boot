@@ -59,6 +59,13 @@
             <artifactId>ateng-common-aop-log</artifactId>
             <version>${revision}</version>
         </dependency>
+
+        <!-- ateng-common-admin -->
+        <dependency>
+            <groupId>io.github.kongyu666</groupId>
+            <artifactId>ateng-common-admin</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
 
     <!-- ========================== -->

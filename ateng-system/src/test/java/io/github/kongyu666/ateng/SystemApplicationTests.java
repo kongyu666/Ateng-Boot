@@ -1,4 +1,4 @@
-package io.github.kongyu666.ateng.system;
+package io.github.kongyu666.ateng;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

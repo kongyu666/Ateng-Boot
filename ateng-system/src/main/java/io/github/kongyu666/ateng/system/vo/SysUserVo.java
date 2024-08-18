@@ -1,6 +1,5 @@
 package io.github.kongyu666.ateng.system.vo;
 
-import com.mybatisflex.annotation.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,7 +20,6 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table("sys_user")
 public class SysUserVo implements Serializable {
 
     @Serial

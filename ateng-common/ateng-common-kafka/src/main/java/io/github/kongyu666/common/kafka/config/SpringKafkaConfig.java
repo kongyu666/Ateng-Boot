@@ -1,6 +1,6 @@
 package io.github.kongyu666.common.kafka.config;
 
-import local.lingo.qj.common.core.factory.YmlPropertySourceFactory;
+import io.github.kongyu666.common.core.factory.YmlPropertySourceFactory;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.PropertySource;
 
