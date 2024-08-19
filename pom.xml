@@ -84,7 +84,7 @@
         <!-- Apache POI版本，用于处理Excel文档 -->
         <poi.version>5.2.5</poi.version>
         <!-- EasyExcel版本，用于简化Excel操作 -->
-        <easyexcel.version>4.0.1</easyexcel.version>
+        <easyexcel.version>4.0.2</easyexcel.version>
         <!-- MapStruct Plus版本，用于对象映射 -->
         <mapstruct-plus.version>1.4.3</mapstruct-plus.version>
         <!-- MapStruct Plus Lombok支持版本 -->
